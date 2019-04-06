@@ -15,7 +15,7 @@
 
 <?php foreach ($userTests as $testU) : ?>
 <h1>
- <?php echo  $testU->id.' . '.$testU->name ; ?>
+ <?php echo  'id=' . $testU->id.' name='.$testU->name ; ?>
 </h1>
 <br/>
 <?php endforeach ?>
