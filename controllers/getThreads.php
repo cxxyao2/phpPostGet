@@ -1,6 +1,7 @@
 <?php
 
 //$query = new QueryBuilder($database);
-$tasks = $query -> fetchAll('users');
+
+$threads = $query->fetchPartData('threads', [$_REQUEST['id']]);
 
 require 'view/index.view.php';

@@ -1,40 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-    <style>
-        header{
-            background: #e3e3e3;
-            padding: 2em;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+
         <?php include('partials/nav.php'); ?>
   
-        <ul>
-            <?php foreach ($tasks as $task) : ?>
-                <li>
-                    <strong>
-                        <?=   var_dump($task);  ?></strong>
+       <h1>input your name</h1>
 
-                      
+       
+       <ui>
+        <?php foreach($tasks as $task) : ?>
+            <li><?= $task->name ?></li>
+        <?php endforeach; ?>
+        </ui>
+        
+        <h1> a post method </h1>
+       <form method="POST" action="/names">
+           <input name="id" />
+           <input name="name"  />
+           <button type="submit">submit</button>
+       </form>
 
-                  
-                </li>
-            <?php endforeach; ?>
-           
-        </ul>
+        <h1>a get method  threads<h1>
+        <form method="Get" action="/threads">
+           <input name="id" />
+           <button type="submit">submit</button>
+       </form>
 
+       <ui>
+        <?php foreach($threads as $thread) : ?>
+            <li><?= $thread->title ?></li>
+        <?php endforeach; ?>
+        </ui>
 
+       <?=  readfile('test3.txt'); ?>
 
+        <?php include('partials/footer.php'); ?>
     
-</body>
-</html>
+
 
