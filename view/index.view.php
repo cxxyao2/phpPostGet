@@ -23,10 +23,19 @@
            <button type="submit">submit</button>
        </form>
 
+
+        <div style="border:5px solid blue;">the following is post</div>
+        <h1>a post method  threads<h1>
+        <form method="Post" action="/threads">
+           <label>title</label><input name="title" style="border:5px solid blue;" />
+           <label>body</label><input name="body"   style="border:5px solid blue;"/>
+           <button type="submit">submit</button>
+       </form>
        <ui>
         <?php foreach($threads as $thread) : ?>
             <li><?= $thread->title ?></li>
         <?php endforeach; ?>
+        <?php $strJson; ?>
         </ui>
 
        <?=  readfile('test3.txt'); ?>
