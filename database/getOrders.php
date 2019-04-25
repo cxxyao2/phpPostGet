@@ -1,6 +1,9 @@
 <?php
 
+function getdata() {
  $orders = [];
+ $database = require 'core/bootstrap.php';
+ $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  $statement = $database->prepare("select * from orders ");
 
  try{
@@ -16,12 +19,17 @@
    
     }
     // return json_encode($objArray);
-    return json_encode($orders);
+   return  json_encode($orders);
+  
  }
 catch (PDOException $e) {
  //Do your error handling here
- $message = $e->getMessage();
+  return  $e->getMessage();
  //log error , not show on website
 }
 
 return http_response_code(422);  //Unprocessable Entity (WebDAV)
+}
+
+$strJson = getdata();
+require 'view/testGet.php';

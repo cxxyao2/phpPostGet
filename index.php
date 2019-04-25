@@ -8,6 +8,7 @@
     $router = Router::load('routes.php');
     $query = new QueryBuilder($database);
   
- 
+   // echo ($_SERVER['REQUEST_URI']);
+   // echo ($_SERVER['REQUEST_METHOD']);
     //$uri = trim($_SERVER['REQUEST_URI'], '/');  //'about/culture'
     require $router->direct(Request::uri(), Request::method());
