@@ -18,3 +18,4 @@ composer dump-autoload
 https://packagist.org/ 
 
 -这是一个PHP写的包含CSUD功能的服务端
+-PHP EMAIL 没有使用GMAIL.因为安全设置
